@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b4e">
+  <title>MY DOCUMENT WALLET</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-icon">▣</div><div><b>MY DOCUMENT WALLET</b><small>Your documents, in one place</small></div></div>
+      <button id="logoutBtn" class="btn ghost hidden">Logout</button>
+    </header>
+    <main>
+      <section id="authView" class="auth-layout">
+        <div class="hero">
+          <span class="eyebrow">PERSONAL DIGITAL VAULT</span>
+          <h1>Your important<br><em>documents, organized.</em></h1>
+          <p>Keep your personal files organized in one private place. Sign in to access your wallet.</p>
+          <div class="secure-note">🔒 Private account access · Your account only</div>
+        </div>
+        <div class="panel auth-panel">
+          <div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="signup">Create account</button></div>
+          <h2 id="authTitle">Welcome back</h2><p class="muted" id="authSubtitle">Login to open your document wallet.</p>
+          <form id="authForm">
+            <label>Email address<input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+            <label>Password<input id="password" type="password" minlength="6" autocomplete="current-password" required placeholder="At least 6 characters"></label>
+            <button class="btn primary full" id="authSubmit">Login securely</button>
+          </form>
+          <p class="tiny muted">Use your own account. Do not share your password or upload documents to a shared device.</p>
+          <div id="authMessage" class="message"></div>
+        </div>
+      </section>
+
+      <section id="walletView" class="hidden">
+        <div class="welcome-row"><div><span class="eyebrow">YOUR PRIVATE SPACE</span><h1>My Documents</h1><p class="muted" id="userEmail"></p></div><div class="avatar">MW</div></div>
+        <div class="summary-card"><div><span class="eyebrow light">DOCUMENT WALLET</span><h2>Everything important.<br>All in one place.</h2><p>Upload, find and download your files.</p></div><div class="summary-symbol">▤</div></div>
+        <div class="toolbar"><div><h2>Document library</h2><p class="muted">Choose a category or add a new file.</p></div><label class="btn primary upload-btn">＋ Add document<input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp" hidden></label></div>
+        <div class="category-grid" id="categories"></div>
+        <div class="library-head"><h2 id="listTitle">All documents</h2><input id="searchInput" class="search" placeholder="Search documents…"></div>
+        <div id="documents" class="document-list"></div>
+        <div class="privacy-foot">🔐 Keep your login private. This is a personal document organizer, not an official government ID or DigiLocker replacement.</div>
+      </section>
+    </main>
+    <div id="toast" role="status"></div>
+  </div>
+  <script type="module" src="app.js"></script>
+</body></html>
